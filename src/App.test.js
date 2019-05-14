@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { render } from 'react-testing-library'
+import { render, fireEvent } from 'react-testing-library'
 import 'react-testing-library/cleanup-after-each'
 
 import App from './App';
@@ -22,5 +22,14 @@ describe('<App />', () => {
     const { queryByText } = render(<App />)
 
     queryByText(/hello world!/i)
+  })
+
+  it('should greet the team', () => {
+    const { getByText } = render(<App />)
+
+    const button = getByText(/greet/i)
+    fireEvent.click(button)
+
+    getByText(/hello web 18/i)
   })
 })
