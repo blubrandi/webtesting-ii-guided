@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { render } from 'react-testing-library'
+import 'react-testing-library/cleanup-after-each'
 
 import App from './App';
 
@@ -17,4 +18,9 @@ describe('<App />', () => {
     render(<App />)
   })
 
+  it('should display hello world', () => {
+    const { queryByText } = render(<App />)
+
+    queryByText(/hello world!/i)
+  })
 })
