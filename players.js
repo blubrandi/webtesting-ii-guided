@@ -13,7 +13,7 @@ function Players(props) {
 
             {players.map(p => (
                 // each player should have id and name
-                <div key={p.id}>{p.name}</div>
+                <div data-testID="player.name" key={p.id}>{p.name}</div>
             ))}
         </>
     );
