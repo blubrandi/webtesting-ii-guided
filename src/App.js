@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Players from '../players'
+
 function App() {
   const [greeting, setGreeting] = useState('')
 
@@ -16,6 +18,7 @@ function App() {
         <button onClick={greet}>Greet</button>
       </div>
       <h4>{greeting}</h4>
+      <Players />
     </div>
   );
 }
